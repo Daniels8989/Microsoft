@@ -13,14 +13,4 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-{
-    "name": "Prueba",
-    "id": "/subscriptions/0284f3d2-0ada-4a15-a1bc-f59ce385320b/resourceGroups/RG-PRUEBAS-TECNICAS-4/providers/Microsoft.Compute/virtualMachines/Prueba",
-    "type": "Microsoft.Compute/virtualMachines",
-    "location": "eastus2",
-    "properties": {
-        "vmId": "720996d3-b638-48fb-8d11-4031816cb1f1",
-        "hardwareProfile": {
-            "vmSize": "Standard_D2s_v3"
-        },
-    }
+az vm start --resource-group RG-PRUEBAS-TECNICAS-4 --name Prueba
