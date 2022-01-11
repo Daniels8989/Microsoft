@@ -1,0 +1,113 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+{
+    "name": "Prueba",
+    "id": "/subscriptions/0284f3d2-0ada-4a15-a1bc-f59ce385320b/resourceGroups/RG-PRUEBAS-TECNICAS-4/providers/Microsoft.Compute/virtualMachines/Prueba",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "eastus2",
+    "properties": {
+        "vmId": "720996d3-b638-48fb-8d11-4031816cb1f1",
+        "hardwareProfile": {
+            "vmSize": "Standard_D2s_v3"
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "MicrosoftWindowsServer",
+                "offer": "WindowsServer",
+                "sku": "2019-datacenter-gensecond",
+                "version": "latest",
+                "exactVersion": "17763.3125.2112070401"
+            },
+            "osDisk": {
+                "osType": "Windows",
+                "name": "Prueba_disk1_0d5a62254d7d4af4b6323e4c02360168",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "storageAccountType": "StandardSSD_LRS",
+                    "id": "/subscriptions/0284f3d2-0ada-4a15-a1bc-f59ce385320b/resourceGroups/RG-PRUEBAS-TECNICAS-4/providers/Microsoft.Compute/disks/Prueba_disk1_0d5a62254d7d4af4b6323e4c02360168"
+                },
+                "deleteOption": "Detach",
+                "diskSizeGB": 127
+            },
+            "dataDisks": [
+                {
+                    "lun": 0,
+                    "name": "Prueba_DataDisk_1",
+                    "createOption": "Attach",
+                    "caching": "ReadWrite",
+                    "writeAcceleratorEnabled": false,
+                    "managedDisk": {
+                        "storageAccountType": "StandardSSD_LRS",
+                        "id": "/subscriptions/0284f3d2-0ada-4a15-a1bc-f59ce385320b/resourceGroups/RG-PRUEBAS-TECNICAS-4/providers/Microsoft.Compute/disks/Prueba_DataDisk_1"
+                    },
+                    "deleteOption": "Detach",
+                    "diskSizeGB": 1024,
+                    "toBeDetached": false
+                },
+                {
+                    "lun": 1,
+                    "name": "Prueba_DataDisk_2",
+                    "createOption": "Attach",
+                    "caching": "ReadWrite",
+                    "writeAcceleratorEnabled": false,
+                    "managedDisk": {
+                        "storageAccountType": "Premium_LRS",
+                        "id": "/subscriptions/0284f3d2-0ada-4a15-a1bc-f59ce385320b/resourceGroups/RG-PRUEBAS-TECNICAS-4/providers/Microsoft.Compute/disks/Prueba_DataDisk_2"
+                    },
+                    "deleteOption": "Detach",
+                    "diskSizeGB": 1024,
+                    "toBeDetached": false
+                }
+            ]
+        },
+        "osProfile": {
+            "computerName": "Prueba",
+            "adminUsername": "Prueba",
+            "windowsConfiguration": {
+                "provisionVMAgent": true,
+                "enableAutomaticUpdates": true,
+                "patchSettings": {
+                    "patchMode": "AutomaticByOS",
+                    "assessmentMode": "ImageDefault",
+                    "enableHotpatching": false
+                }
+            },
+            "secrets": [],
+            "allowExtensionOperations": true,
+            "requireGuestProvisionSignal": true
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/0284f3d2-0ada-4a15-a1bc-f59ce385320b/resourceGroups/RG-PRUEBAS-TECNICAS-4/providers/Microsoft.Network/networkInterfaces/prueba697"
+                }
+            ]
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "provisioningState": "Succeeded",
+        "timeCreated": "2022-01-07T21:11:24.0378564+00:00"
+    }
+}
