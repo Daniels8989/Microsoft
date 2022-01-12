@@ -1,16 +1,23 @@
+- name: Prueba-arroyo
 trigger:
 - main
 
 pool:
-  vmImage: windows-latest
+  vmImage: ubuntu-latest
 
+build: 
+
+  runs-on:  ubuntu-latest
+  
 steps:
+
+  - uses: action/Checkout@v1
+  - name: 
+
 - script: echo Hello!
   displayName: 'Run a one-line script'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
 
-az vm start --resource-group RG-PRUEBAS-TECNICAS-4 --name Prueba
